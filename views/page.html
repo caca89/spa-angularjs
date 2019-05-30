@@ -1,0 +1,35 @@
+<div id="content">
+    <div class="content" ng-controller="pageCtrl">
+		<div class="logo"><img src="assets/img/logo.png"></div>
+		<div class="page-button">
+			<a ui-sref="app.login" class="login">LOGIN</a>
+			<a ui-sref="app.register" class="register">REGISTER</a>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+	#content {
+		height: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+		padding: 50px;
+	}
+	.logo {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.page-button a {
+		display: block;
+		padding: 10px 15px;
+		text-align: center;
+		margin-bottom: 10px;
+		color: #fff;
+	}
+	.page-button a.login {
+		background: orange;
+	}
+	.page-button a.register {
+		background: green;
+	}
+</style>

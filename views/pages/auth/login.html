@@ -1,0 +1,71 @@
+<div id="login" ng-controller="loginCtrl">
+	<div class="login-header">
+		<div class="logo"><img src="assets/img/logo.png"></div>
+		<h3 class="title">Login</h3>
+	</div>
+	<div class="login-body">
+	    <info-message data="info"></info-message>
+	    <form method="post" name="formLogin" ng-submit="doLogin(login)">
+	        <div class="forms">
+	            <input type="email" class="form-control" ng-model="login.email" placeholder="Email" required>
+	        </div>
+	        <div class="forms">
+	            <input type="password" class="form-control" ng-model="login.password" placeholder="Kata Sandi" required>
+	        </div>
+	        <div class="forms" style="margin-top: 15px;">
+	            <button type="submit" class="btn btn-info" data-ng-disabled="formLogin.$invalid">Login</button>
+	            <hr>
+	            <a ui-sref="/">Halaman Utama</a>
+	        </div>
+	    </form>
+	</div>
+</div>
+<style type="text/css">
+	#content {
+		height: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+		padding: 0 30px;
+	}
+	#login {
+		border: 1px solid #ccc;
+	}
+	.login-header .logo {
+		float: left; 
+		width: 100px;
+		padding: 10px 15px;
+		border-right: 1px solid #ccc;
+	}
+	.login-header .logo img {
+		width: 100%;
+		max-width: 100%;
+	}
+	.login-header .title {
+		padding: 21px 15px 21px 120px;
+		margin: 0;
+		border-bottom: 2px solid #ccc;
+	}
+	.login-body {
+		padding: 30px 20px;
+	}
+	.forms {
+		margin-bottom: 15px;
+	}
+	.forms input {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		padding: 6px 12px;
+	}
+	.forms button {
+		width: 100%;
+		text-align: center;
+		color: #fff;
+		background: orange;
+		border: 0;
+		padding: 10px 20px;
+	}
+	.forms button[disabled] {
+		background: #ccc;
+	}
+</style>

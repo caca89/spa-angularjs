@@ -1,0 +1,73 @@
+<div id="home" ng-controller="homeCtrl">
+	<div class="home-header">
+		<div class="logo"><img src="assets/img/logo.png"></div>
+		<h3 class="title">Promo Terbaru</h3>
+	</div>
+	<div class="home-body">
+		<ul id="lists" ng-bind-html="promos"></ul>
+        <a href="javascript:;" ng-click="doLogout()">Keluar</a>
+
+	</div>
+</div>
+<style type="text/css">
+	#content {
+		height: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+		padding: 0 30px;
+	}
+	#home {
+		border: 1px solid #ccc;
+	}
+	.home-header .logo {
+		float: left; 
+		width: 100px;
+		padding: 10px 15px;
+		border-right: 1px solid #ccc;
+	}
+	.home-header .logo img {
+		width: 100%;
+		max-width: 100%;
+	}
+	.home-header .title {
+		padding: 21px 15px 21px 120px;
+		margin: 0;
+		border-bottom: 2px solid #ccc;
+	}
+	.home-body {
+		padding: 5px;
+	}
+	ul {
+	    list-style-type: none;
+	    background-color: #fff;
+	    margin-bottom: 3px;
+	    padding: 0;
+	}
+	ul li {
+		border-bottom: 1px solid #ccc;
+	    min-height: 75px;
+	    clear: both;
+	}
+	ul li a img {
+	    float: left;
+	    margin-right: 10px;
+	    padding-top: 10px;
+	    padding-left: 5px;
+	}
+	ul li span {
+	    display: block;
+	}
+	ul li span.merchant-name {
+	    padding-top: 5px;
+	    font-weight: bold;
+	    color: #696969;
+	}
+	ul li span.promo-title {
+	    font-size: 12px;
+	    line-height: 16px;
+	}
+	ul li span.valid-until {
+	    font-size: 11px;
+	    color: #8b8989;
+	}
+</style>

@@ -1,0 +1,146 @@
+<div id="register" ng-controller="registerCtrl">
+	<div class="tabs">
+		<ul>
+			<li><span ng-class="tab_active=='general'?'active':''"><i class="fa fa-user"></i></span></li>
+			<li><span ng-class="tab_active=='contact'?'active':''"><i class="fa fa-envelope"></i></span></li>
+			<li><span ng-class="tab_active=='password'?'active':''"><i class="fa fa-cog"></i></span></li>
+			<li><span ng-class="tab_active=='success'?'active':''"><i class="fa fa-thumbs-o-up"></i></span></li>
+		</ul>
+	</div>
+	<div class="tabs-body">
+		<div ng-if="tab_active=='general'">
+		    <form method="post" name="formGeneral">
+		        <div class="forms">
+		            <input type="text" ng-model="register.first_name" placeholder="Nama Depan" required>
+		        </div>
+		        <div class="forms">
+		            <input type="text" ng-model="register.last_name" placeholder="Nama Belakang" required>
+		        </div>
+		        <div class="forms">
+		        	<select ng-model="register.gender">
+		        		<option value="">Pilih Jenis Kelamin</option>
+		        		<option value="1">Laki-Laki</option>
+		        		<option value="0">Perempuan</option>
+		        	</select>
+		        </div>
+		        <div class="forms">
+		            <input type="number" ng-model="register.age" placeholder="Umur" required>
+		        </div>
+		        <div class="forms" style="margin-top: 15px;">
+		            <button type="button" data-ng-disabled="formGeneral.$invalid"  ng-click="saveGeneral(register)">Next</button>
+		        </div>
+		    </form>
+	        <hr>
+	        <a ui-sref="/">Halaman Utama</a>
+		</div>
+		<div ng-if="tab_active=='contact'">
+		    <form method="post" name="formContact">
+		        <div class="forms">
+		            <input type="email" ng-model="register.email" placeholder="Email" required>
+		        </div>
+		        <div class="forms">
+		            <input type="number" ng-model="register.phone" ng-keyup="keyupPhone(register.phone)" placeholder="Nomor Telepon" required>
+		        </div>
+		        <div class="forms" style="margin-top: 15px;">
+		            <button type="button" data-ng-disabled="formContact.$invalid" ng-click="saveContact(register)">Next</button>
+		        </div>
+		    </form>
+		</div>
+		<div ng-if="tab_active=='password'">
+		    <form method="post" name="formPassword">
+		        <div class="forms">
+		            <input type="password" ng-model="register.password" placeholder="Kata Sandi" required>
+		        </div>
+		        <div class="forms">
+		            <input type="password" ng-model="register.confirm_password" placeholder="Ulangi Kata Sandi" required>
+		        </div>
+		        <div class="forms" style="margin-top: 15px;">
+		            <button type="button" data-ng-disabled="formPassword.$invalid||register.password!=register.confirm_password" ng-click="savePassword(register)">Next</button>
+		        </div>
+		    </form>
+		</div>
+		<div ng-if="tab_active=='success'" class="success">
+			<span class="icon"><i class="fa fa-thumbs-o-up"></i></span>
+		    <h3>Selamat!</h3>
+		    <h5>Anda Berhasil Terdaftar di TK Bermain Terus</h5>
+ 			<hr>
+	        <a ui-sref="/">Halaman Utama</a>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+ 	.clear {
+ 		clear: both;
+ 	}
+	#content {
+		height: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+		padding: 0px;
+	}
+	#register {
+		border: 1px solid #ccc;
+	}
+	.tabs {
+		min-height: 38px;
+	}
+	.tabs ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.tabs ul li {
+		float: left;
+		width: 25%;
+		text-align: center;
+	}
+	.tabs ul li span {
+		display: block;
+		padding: 10px;
+		background: #ccc;
+	}
+	.tabs ul li span.active {
+		background: #fff;
+	}
+	.tabs-body {
+		padding: 30px;
+	}
+	.forms {
+		margin-bottom: 15px;
+	}
+	.forms input,
+	.forms select {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		padding: 6px 12px;
+	}
+	.forms button {
+		width: 100%;
+		text-align: center;
+		color: #fff;
+		background: orange;
+		border: 0;
+		padding: 10px 20px;
+	}
+	.forms button[disabled] {
+		background: #ccc;
+	}
+	.success .icon {
+		display: block;
+		text-align: center;
+		font-size: 55px;
+		color: #e29015;
+		margin-bottom: 20px;
+	}
+	.success h3,
+	.success h5 {
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+	.success h3 {
+		color: orange;
+		padding-bottom: 5px;
+	}
+</style>
